@@ -13,10 +13,13 @@
     {% endif %}
   </ul>
 </nav>
+
 <section class="content">
   <header>
     {% block header %}{% endblock %}
   </header>
+  {% block game %}{% endblock %}
+  <hr>
   {% for message in get_flashed_messages() %}
     <div class="flash">{{ message }}</div>
   {% endfor %}

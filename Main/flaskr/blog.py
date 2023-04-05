@@ -14,7 +14,7 @@ def home():
     return render_template('games/Home.html')
 
 
-@bp.route('/<game>', methods=('GET','POST'))
+@bp.route('/<game>/', methods=('GET','POST'))
 def index(game):
     db = get_db()
     posts = db.execute(
@@ -96,9 +96,9 @@ def update(game, id):
     return render_template('blog/update.html', post=post)
 
 
-@bp.route('/<int:id>/delete', methods=('POST',))
+@bp.route('/<game>/<int:id>/delete', methods=('POST',))
 @login_required
-def delete(id):
+def delete(game, id):
     get_post(id)
     db = get_db()
     db.execute('DELETE FROM post WHERE id = ?', (id,))

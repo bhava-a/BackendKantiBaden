@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Game 1{% endblock %}</h1>
+  <h1>{% block title %}Game 2{% endblock %}</h1>
   {% if g.user[1] == "admin" %}
-    <a class="action" href="{{ url_for('blog.create',game = G2) }}">New</a>
+    <a class="action" href="{{ url_for('blog.create',game = 'G2') }}">New</a>
   {% endif %}
 {% endblock %}
 
